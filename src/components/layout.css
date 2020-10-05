@@ -66,7 +66,7 @@ h1 {
   margin: 0.67em 0;
 }
 mark {
-  background-color: #ff0;
+  background-color: rgb(206, 147, 221);
   color: #000;
 }
 small {
@@ -610,7 +610,7 @@ h5::selection,
 h6::selection,
 p::selection,
 a::selection {
-  background: #fffa96cc;
+  background: #dcaee6cc;
 }
 
 .gatsby-highlight {
