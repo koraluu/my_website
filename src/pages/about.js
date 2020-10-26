@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 const Content = styled.div`
   margin: 0 auto;
   max-width: 860px;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.5rem 1.0875rem;
 `
 
 const ArticleDate = styled.h5`
@@ -26,7 +26,15 @@ const MarkerHeader = styled.h3`
     rgba(206, 147, 221, 0.25)
   );
 `
-
+const MarkerHeader2 = styled.h2`
+  display: inline;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(206, 147, 221, 0.15),
+    rgba(206, 147, 221, 0.8) 100%,
+    rgba(206, 147, 221, 0.25)
+  );
+`
 const ReadingTime = styled.h5`
   display: inline;
   color: #606060;
@@ -37,31 +45,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Blog" />
       <Content>
-        <h1>Blog</h1>
-        {data.allMarkdownRemark.edges
-          .filter(({ node }) => {
-            const rawDate = node.frontmatter.rawDate
-            const date = new Date(rawDate)
-            return date < new Date()
-          })
-          .map(({ node }) => (
-            <div key={node.id}>
-              <Link
-                to={node.frontmatter.path}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-                <MarkerHeader>{node.frontmatter.title}</MarkerHeader>
-              </Link>
-              <div>
-                <ArticleDate>{node.frontmatter.date}</ArticleDate>
-                <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
-              </div>
-              <p>{node.excerpt}</p>
-            </div>
-          ))}
+        <h1>About Me</h1>
+        <MarkerHeader>I am really Kora</MarkerHeader>
       </Content>
     </Layout>
   )
